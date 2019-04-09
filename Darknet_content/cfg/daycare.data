@@ -1,6 +1,6 @@
 classes= 1
-train  = /Users/muhammadmuhaimin/SFU/Big-Data/880-Deep-Learning/Satellite-Daycare-detection/darknet/data/daycare/train.txt
-valid  = /Users/muhammadmuhaimin/SFU/Big-Data/880-Deep-Learning/Satellite-Daycare-detection/darknet/data/daycare/test.txt
+train  = data/daycare/train.txt
+valid  = data/daycare/test.txt
 names = data/daycare.names
 backup = backup
 
