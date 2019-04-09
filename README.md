@@ -1,6 +1,8 @@
 # Satellite-Daycare-detection
 Experimentation of building detection in Satellite image, by detecting day care from Brazil Satellite Data
 
+### YOLO Option
+
 Preq: Install Darknet from here: https://pjreddie.com/darknet/install/
 
 1. Copy images with the folder name 'Daycares' inside the data folder
