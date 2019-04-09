@@ -151,7 +151,7 @@ shared_layers = nn.nn_base(img_input, trainable=True)
 num_anchors = len(C.anchor_box_scales) * len(C.anchor_box_ratios)
 rpn = nn.rpn(shared_layers, num_anchors)
 
-# detection network 정의
+# detection network 
 classifier = nn.classifier(shared_layers, roi_input, C.num_rois, nb_classes=len(classes_count), trainable=True)
 
 model_rpn = Model(img_input, rpn[:2])
@@ -177,14 +177,15 @@ model_rpn.compile(optimizer=optimizer, loss=[losses.rpn_loss_cls(num_anchors), l
 model_classifier.compile(optimizer=optimizer_classifier, loss=[losses.class_loss_cls, losses.class_loss_regr(len(classes_count)-1)], metrics={'dense_class_{}'.format(len(classes_count)): 'accuracy'})
 model_all.compile(optimizer='sgd', loss='mae')
 
-# Tensorboard log폴더 생성
+# Tensorboard log
 log_path = './logs'
 if not os.path.isdir(log_path):
     os.mkdir(log_path)
 
-# Tensorboard log모델 연결
+# Tensorboard log
 callback = TensorBoard(log_path)
 callback.set_model(model_all)
+
 
 epoch_length = 1000
 num_epochs = int(options.num_epochs)
