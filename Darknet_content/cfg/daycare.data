@@ -1,0 +1,6 @@
+classes= 1
+train  = data/daycare/train.txt
+valid  = data/daycare/test.txt
+names = data/daycare.names
+backup = backup
+

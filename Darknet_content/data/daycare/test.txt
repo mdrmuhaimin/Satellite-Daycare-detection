@@ -1,0 +1,4 @@
+/Users/muhammadmuhaimin/SFU/Big-Data/880-Deep-Learning/Satellite-Daycare-detection/data/Daycares/1479_20160807.jpg
+/Users/muhammadmuhaimin/SFU/Big-Data/880-Deep-Learning/Satellite-Daycare-detection/data/Daycares/1752_20140404.jpg
+/Users/muhammadmuhaimin/SFU/Big-Data/880-Deep-Learning/Satellite-Daycare-detection/data/Daycares/17471_20170218.jpg
+/Users/muhammadmuhaimin/SFU/Big-Data/880-Deep-Learning/Satellite-Daycare-detection/data/Daycares/1913_20120625.jpg
