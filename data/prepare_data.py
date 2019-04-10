@@ -14,7 +14,7 @@ filepath_to_labels = 'labels/'
 
 # Name of file that will have annotations
 save_to_file = 'annotate.txt'
-image_path_file = 'train.txt'
+image_path_file = 'all.txt'
 
 
 # Annotated output
@@ -48,6 +48,7 @@ for r in range(len(da)):
             current_annot = '{} {} {} {} {}'.format(0, rel_x, rel_y, rel_width, rel_height)
             image_paths.append(imagepath)
             output_annot.append(current_annot)
+            # print(filepath_label)
             with open(filepath_label, 'w') as f:
                 f.write("%s\n" % current_annot)
     
