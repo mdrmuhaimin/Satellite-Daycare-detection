@@ -31,9 +31,8 @@ for r in range(len(da)):
         imagepath = cwd +'/'+ filepath
         filepath_label = filepath_to_daycares + da.loc[r, 'filename'] # both jpg and text need to be in same dir
         filepath_label = filepath_label.replace('.jpg', '.txt')
-        try:
-            img = cv2.imread(filepath)
-
+        img = cv2.imread(filepath)
+        if not (img is None):
             # Get rect attributes
             rect = ast.literal_eval(da.loc[r, 'region_shape_attributes'])
 
@@ -52,7 +51,7 @@ for r in range(len(da)):
             with open(filepath_label, 'w') as f:
                 f.write("%s\n" % current_annot)
     
-        except FileNotFoundError:
+        else:
             print(filepath, ' not found')
 
 
