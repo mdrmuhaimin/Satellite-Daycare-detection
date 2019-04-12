@@ -38,8 +38,8 @@ for r in range(len(da)):
             rect = ast.literal_eval(da.loc[r, 'region_shape_attributes'])
 
             height, width, channels = img.shape
-            rel_x = rect['x'] / width
-            rel_y = rect['y'] / height
+            rel_x = (rect['x'] + (width / 2))/ width
+            rel_y = (rect['y'] + (height / 2))/ height
             rel_width = rect['width'] / width
             rel_height = rect['height'] / height
 
