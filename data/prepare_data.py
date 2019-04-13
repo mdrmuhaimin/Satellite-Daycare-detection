@@ -38,7 +38,7 @@ for r in range(len(da)):
 
             height, width, channels = img.shape
             rel_x = (rect['x'] + (rect['width'] / 2) )/ width
-            rel_y = (rect['y'] + (rect['width'] / 2)/ height
+            rel_y = (rect['y'] + (rect['width'] / 2) )/ height
             rel_width = rect['width'] / width
             rel_height = rect['height'] / height
 
