@@ -2,6 +2,7 @@ NonDaycares
 Daycares
 Daycares-copy
 Daycares-full
+zca/*
 #mAP/input/detection-results/*
 #mAP/input/ground-truth/*
 mAP/input/images-optional*/*
