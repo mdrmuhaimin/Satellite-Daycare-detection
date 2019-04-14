@@ -46,7 +46,7 @@ class METADATA(Structure):
     
 
 #lib = CDLL("/home/pjreddie/documents/darknet/libdarknet.so", RTLD_GLOBAL)
-lib = CDLL(getcwd()+"libdarknet.so", RTLD_GLOBAL)
+lib = CDLL(getcwd()+"/libdarknet.so", RTLD_GLOBAL)
 lib.network_width.argtypes = [c_void_p]
 lib.network_width.restype = c_int
 lib.network_height.argtypes = [c_void_p]
@@ -151,6 +151,8 @@ import numpy as np
 testfile_path = os.getcwd()+'/data/daycare/test/'
 files = pd.read_csv(os.getcwd()+'/data/daycare/test.csv', header=None)[0].values
 
+net = load_net(b"cfg/yolov3-daycare.cfg", b"yolov3-daycare_10000.weights", 0)
+meta = load_meta(b"cfg/daycare.data")
     
 if __name__ == "__main__":
     results = []
@@ -171,18 +173,16 @@ if __name__ == "__main__":
         path = str.encode(path)
         img_height, img_width, channel = cv2.imread(testfile_path+file).shape
         # print(path)
-        net = load_net(b"cfg/yolov3-daycare.cfg", b"yolov3-daycare_900.weights", 0)
-        meta = load_meta(b"cfg/daycare.data")
         r = detect(net, meta, path)
         if len(r) > 0:
             # print(r)
             file_details = r[0]
             conf = file_details[1]
             x, y, width, height = file_details[2]
-            x = x * img_width
-            width = width * img_width
-            y = y * img_height
-            height = y * img_height
+            # x = x * img_width
+            # width = width * img_width
+            # y = y * img_height
+            # height = y * img_height
             xmin = x - (width/2)
             xmax = x + (width/2)
             ymin = y - (height/2)
