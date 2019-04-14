@@ -1,3 +1,3 @@
-rm mAP/input/detection-results/*
-rm mAP/input/ground-truth/*
+rm mAP_custom/input/detection-results/*
+rm mAP_custom/input/ground-truth/*
 #mAP/input/images-optional/*
